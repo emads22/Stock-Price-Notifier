@@ -37,6 +37,9 @@ def chrome_web_driver(url):
     # Excludes the "enable-automation" switch, further preventing sites from detecting WebDriver
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
 
+    # # Altenatively, if we prefer Selenium not to open a browser window during execution we can remove all the arguments above and only apply this 
+    # options.add_argument("--headless")
+
     try:
         # Initialize Chrome WebDriver with the configured service and options
         web_driver = webdriver.Chrome(service=service, options=options)
