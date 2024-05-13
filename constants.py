@@ -2,15 +2,19 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
+
 load_dotenv()
 
 
 # Fetching the sender's email and password from environment variables
 SENDER = os.getenv('USER')  # Fetching the sender's email address
-PASSWORD = os.getenv('PASSWORD')  # Fetching the sender's email password  
+PASSWORD = os.getenv('PASSWORD')  # Fetching the sender's email password
 # Setting up the recipient's email address
 # Disposable email service used from: https://temp-mail.org/en/
 RECEIVER = "bayaxo6553@godsigma.com"
+
+GMAIL_HOST = "smtp.gmail.com"
+GMAIL_PORT = 587
 
 # Specify the path to the ChromeDriver executable
 # Make sure to download the appropriate ChromeDriver version matching existing Chrome version
@@ -25,3 +29,5 @@ ISIN = "HRZB00ICBEX6"
 
 # This pattern to extract the percentage change value
 PERCENTAGE_PATTERN = r'([+-]?\d*\.\d+|\d+)'
+
+PERCENTAGE_THRESHOLD = -0.10

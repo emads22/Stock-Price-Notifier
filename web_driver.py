@@ -1,6 +1,5 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import WebDriverException
 from constants import CHROMEDRIVER_PATH
 
@@ -23,7 +22,7 @@ def chrome_web_driver(url):
 
     # Configure ChromeOptions to customize Chrome WebDriver behavior
     options = webdriver.ChromeOptions()
-    
+
     # Disables infobars, such as "Chrome is being controlled by automated test software"
     options.add_argument("disable-infobars")
     # Maximizes the browser window on startup
@@ -37,8 +36,6 @@ def chrome_web_driver(url):
     options.add_argument("disable-blink-features=AutomationControlled")
     # Excludes the "enable-automation" switch, further preventing sites from detecting WebDriver
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
-
-    
 
     try:
         # Initialize Chrome WebDriver with the configured service and options
