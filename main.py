@@ -30,11 +30,11 @@ def get_stock_change_percentage():
 
         time.sleep(5)
 
-        # Find stock element on the webpage using CSS Selector
+        # Find stock element on the webpage using XPATH
         stock_element = chrome.find_element(by=By.XPATH,
                                             value='//*[@id="app_indeks"]/section[1]/div/div/div[2]/span[1]')
 
-        # Find percentage element on the webpage using CSS Selector
+        # Find percentage element on the webpage using XPATH
         percentage_element = chrome.find_element(by=By.XPATH,
                                                  value='//*[@id="app_indeks"]/section[1]/div/div/div[2]/span[2]')
 
